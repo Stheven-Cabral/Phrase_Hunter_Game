@@ -14,4 +14,10 @@
             ];
          this.activePhrase = null;
      }
+
+     getRandomPhrase() {
+        const randomNum = Math.floor(Math.random() * this.phrases.length);
+        const chosenPhrase = this.phrases[randomNum];
+        return chosenPhrase;
+     }
  }
