@@ -29,5 +29,14 @@
          }
      }
 
-     showMatchedLetter() {}
+     showMatchedLetter(selectedLetter) {
+         const phraseLetters = document.querySelectorAll('.letter');
+
+         for (let i = 0; i < phraseLetters.length; i += 1) {
+             if (selectedLetter.innerText === phraseLetters[i].innerText) {
+                 phraseLetters[i].classList.remove('hide');
+                 phraseLetters[i].classList.add('show');
+             }
+         }
+     }
  }

@@ -30,11 +30,21 @@
      }
 
      handleInteraction(selectedLetter) {
-        const chosenPhrase = new Phrase(this.activePhrase.phrase);
-         chosenPhrase.checkedLetter(selectedLetter);
+         const chosenPhrase = new Phrase(this.activePhrase.phrase);
+         if (chosenPhrase.checkedLetter(selectedLetter) === true) {
+             chosenPhrase.showMatchedLetter(selectedLetter);
+         }
      }
 
-     checkForWin() {}
+     checkForWin() {
+         const numHiddenLetters = document.querySelectorAll('li[class="hide"]');
+         if (numHiddenLetters.length > 0) {
+             return false;
+         } else {
+             return true;
+         }
+
+     }
 
      removeLife() {}
 
