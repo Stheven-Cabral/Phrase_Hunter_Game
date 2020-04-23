@@ -8,6 +8,17 @@
      }
 
      addPhraseToDisplay() {
+         const phraseContainer = document.querySelector('#phrase ul');
+         let phraseDisplayHTML = ``;
+
+         for (let i = 0; i < this.phrase.length; i += 1) {
+             if (/[A-Za-z]/.test(this.phrase[i])) {
+                 phraseDisplayHTML += `<li class="hide letter ${this.phrase[i]}">${this.phrase[i]}</li>`;
+             } else {
+                 phraseDisplayHTML += `<li class="space"></li>`;
+             }
+         }
          
+         phraseContainer.innerHTML = phraseDisplayHTML;
      }
  }
