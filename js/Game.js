@@ -46,7 +46,27 @@
 
      }
 
-     removeLife() {}
+     removeLife() {
+        if (this.missed === 5) {
+            this.gameOver();
+        } else {
+            const oneLife = document.querySelector('img[src="images/liveHeart.png"]');
+            oneLife.src = 'images/lostHeart.png';
+            this.missed += 1
+        }
+     }
 
-     gameOver() {}
+     gameOver() {
+         const overlay = document.getElementById('overlay');
+         const gameOverMessage = document.getElementById('game-over-message');
+         if (this.checkForWin() === true) {
+             overlay.style.visibility = 'visible';
+             overlay.className = 'win';
+             gameOverMessage.textContent = 'YOU WIN!';
+         } else {
+            overlay.style.visibility = 'visible';
+            overlay.className = 'lose';
+            gameOverMessage.textContent = 'YOU RAN OUT OF LIVES!';
+         }
+     }
  }
