@@ -17,7 +17,26 @@
 
      getRandomPhrase() {
         const randomNum = Math.floor(Math.random() * this.phrases.length);
-        const chosenPhrase = this.phrases[randomNum];
-        return chosenPhrase;
+        return this.phrases[randomNum];
      }
+
+     startGame() {
+         const overlay = document.getElementById('overlay');
+         overlay.style.visibility = 'hidden';
+         this.activePhrase = this.getRandomPhrase();
+
+         const chosenPhrase = new Phrase(this.activePhrase.phrase);
+         chosenPhrase.addPhraseToDisplay();
+     }
+
+     handleInteraction(selectedLetter) {
+        const chosenPhrase = new Phrase(this.activePhrase.phrase);
+         chosenPhrase.checkedLetter(selectedLetter);
+     }
+
+     checkForWin() {}
+
+     removeLife() {}
+
+     gameOver() {}
  }

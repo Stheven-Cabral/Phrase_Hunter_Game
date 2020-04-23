@@ -21,4 +21,13 @@
          
          phraseContainer.innerHTML = phraseDisplayHTML;
      }
+
+     checkedLetter(selectedLetter) {
+         if (this.phrase.includes(selectedLetter.value)) {
+            console.log('click');
+             return true;
+         }
+     }
+
+     showMatchedLetter() {}
  }
