@@ -21,6 +21,19 @@
      }
 
      startGame() {
+         const keys = document.querySelectorAll('.key');
+         const lives = document.querySelectorAll('.tries img');
+         this.missed = 0;
+         for (let i = 0; i < keys.length; i += 1) {
+            keys[i].classList.remove('chosen');
+            keys[i].classList.remove('wrong');
+            keys[i].disabled = false;
+         }
+
+         for (let l = 0; l < lives.length; l += 1) {
+            lives[l].src = 'images/liveHeart.png';
+         }
+
          const overlay = document.getElementById('overlay');
          overlay.style.visibility = 'hidden';
          this.activePhrase = this.getRandomPhrase();
@@ -29,14 +42,18 @@
          chosenPhrase.addPhraseToDisplay();
      }
 
-     handleInteraction(selectedLetter) {
+     handleInteraction(letterKey) {
+         const selectedLetter = letterKey.innerText;
          const chosenPhrase = new Phrase(this.activePhrase.phrase);
          if (chosenPhrase.checkLetter(selectedLetter) === true) {
              chosenPhrase.showMatchedLetter(selectedLetter);
+             letterKey.classList.add('chosen');
          } else {
              this.removeLife();
+             letterKey.classList.add('wrong');
          }
 
+         letterKey.disabled = true;
          const check = this.checkForWin();
          this.gameOver(check);
 

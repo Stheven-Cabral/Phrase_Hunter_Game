@@ -13,7 +13,7 @@
 // game.startGame();
 // console.log(`Active Phrase - phrase: ${game.activePhrase.phrase}`);
 
-let game = new Game();
+const game = new Game();
 const resetBtn = document.getElementById('btn__reset');
 const keys = document.querySelectorAll('.key');
 
@@ -24,7 +24,7 @@ resetBtn.addEventListener('click', () => {
 
 for (let i = 0; i < keys.length; i += 1) {
     keys[i].addEventListener('click', (e) => {
-        game.handleInteraction(e.target.innerText);
+        game.handleInteraction(e.target);
     });
 }
 
