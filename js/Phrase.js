@@ -34,10 +34,9 @@
 
 
      /***
-      * Checks if passed letter is in phrase
-      * @param (string) letter - Letter to check
+      * `checkLetter` function - checks if a selected key from the game keyboard is in the `phrase`.
+      * @param {string} letter - accepts a letter.
       */
-
      checkLetter(selectedLetter) {
          if (this.phrase.includes(selectedLetter)) {
              return true;
@@ -46,6 +45,10 @@
          }
      }
 
+     /***
+      * `showedMatchedLetter` function - reveals one of the `phrase` letters.
+      * @param {string} letter - accepts a letter.
+      */
      showMatchedLetter(selectedLetter) {
          const phraseLetters = document.querySelectorAll('.letter');
 
