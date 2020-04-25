@@ -46,12 +46,11 @@
      }
 
      /***
-      * `showedMatchedLetter` function - reveals one of the `phrase` letters.
+      * `showedMatchedLetter` function - reveals one of the `phrase` letters that matches a player's selection.
       * @param {string} letter - accepts a letter.
       */
      showMatchedLetter(selectedLetter) {
          const phraseLetters = document.querySelectorAll('.letter');
-
          for (let i = 0; i < phraseLetters.length; i += 1) {
              if (selectedLetter === phraseLetters[i].innerText) {
                  phraseLetters[i].classList.remove('hide');
