@@ -1,16 +1,27 @@
-/* Treehouse FSJS Techdegree
+ /***
+ * Treehouse FSJS Techdegree
  * Project 4 - OOP Game App
- * Phrase.js */
+ * By Stheven Cabral 
+ * */
 
+
+ /***
+  * `Phrase` class represents a phrase.
+  */
  class Phrase {
+     /***
+      * Accepts a phrase and sets a `phrase` property.
+      */
      constructor(phrase) {
         this.phrase = phrase.toLowerCase();
      }
 
+     /***
+      * `addPhraseToDisplay` function - displays the randomly chosen phrase to the gameboard display.
+      */
      addPhraseToDisplay() {
          const phraseContainer = document.querySelector('#phrase ul');
          let phraseDisplayHTML = ``;
-
          for (let i = 0; i < this.phrase.length; i += 1) {
              if (/[A-Za-z]/.test(this.phrase[i])) {
                  phraseDisplayHTML += `<li class="hide letter">${this.phrase[i]}</li>`;
@@ -18,7 +29,6 @@
                  phraseDisplayHTML += `<li class="space"></li>`;
              }
          }
-         
          phraseContainer.innerHTML = phraseDisplayHTML;
      }
 
