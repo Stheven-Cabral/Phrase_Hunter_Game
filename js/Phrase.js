@@ -21,12 +21,13 @@
       */
      addPhraseToDisplay() {
          const phraseContainer = document.querySelector('#phrase ul');
+         phraseContainer.style.whiteSpace = 'nowrap';
          let phraseDisplayHTML = ``;
          for (let i = 0; i < this.phrase.length; i += 1) {
              if (/[A-Za-z]/.test(this.phrase[i])) {
                  phraseDisplayHTML += `<li class="hide letter">${this.phrase[i]}</li>`;
              } else {
-                 phraseDisplayHTML += `<li class="space"></li>`;
+                 phraseDisplayHTML += `<li class="space"></li><li class="space"></li>`;
              }
          }
          phraseContainer.innerHTML = phraseDisplayHTML;
