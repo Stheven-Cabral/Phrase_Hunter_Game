@@ -21,7 +21,6 @@
       */
      addPhraseToDisplay() {
          const phraseContainer = document.querySelector('#phrase ul');
-         phraseContainer.style.whiteSpace = 'nowrap';
          let phraseDisplayHTML = ``;
          for (let i = 0; i < this.phrase.length; i += 1) {
              if (/[A-Za-z]/.test(this.phrase[i])) {
@@ -36,7 +35,7 @@
 
      /***
       * `checkLetter` function - checks if a selected key from the game keyboard is in the `phrase`.
-      * @param {string} letter - accepts a letter.
+      * @param {string} selectedLetter - accepts a letter.
       */
      checkLetter(selectedLetter) {
          if (this.phrase.includes(selectedLetter)) {
@@ -48,7 +47,7 @@
 
      /***
       * `showedMatchedLetter` function - reveals one of the `phrase` letters that matches a player's selection.
-      * @param {string} letter - accepts a letter.
+      * @param {string} selectedLetter - accepts a letter.
       */
      showMatchedLetter(selectedLetter) {
          const phraseLetters = document.querySelectorAll('.letter');
