@@ -11,7 +11,7 @@
  class Game {
      /***
       * Sets a `missed` property that holds the number of missed guesses.
-      * Sets a `phrases` property is an array that holds 5 phrase objects.
+      * Sets a `phrases` property that holds 5 phrase objects in an array.
       * Sets an `activePhrase` property to null. Will hold a randomly chosen phrase.
       */
      constructor() {
