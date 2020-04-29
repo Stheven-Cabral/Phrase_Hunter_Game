@@ -15,7 +15,7 @@
 const game = new Game();
 const resetBtn = document.getElementById('btn__reset');
 const keys = document.querySelectorAll('.key');
-const keyUpKeys = ['KeyA', 'KeyB','KeyC','KeyD','KeyE','KeyF','KeyG','KeyH','KeyI','KeyJ','KeyK','KeyL','KeyM','KeyN','KeyO','KeyP','KeyQ','KeyR','KeyS','KeyT','KeyU','KeyV','KeyW','KeyX','KeyY','KeyZ'];
+const keyUpKeys = ['a', 'b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
 let usedKeyUpKeys = [];
 
 
@@ -49,11 +49,10 @@ for (let i = 0; i < keys.length; i += 1) {
  */
 document.addEventListener('keyup', (e) => {
     if (game.activePhrase !== null) {
-        const onscreenKeys = document.querySelectorAll('.key');
-        if (keyUpKeys.includes(e.code) === true && usedKeyUpKeys.includes(e.code) === false) {
-            for (let i = 0; i < onscreenKeys.length; i += 1) {
-                if (e.code[3].toLowerCase() === onscreenKeys[i].innerText) {
-                    game.handleInteraction(onscreenKeys[i]);
+        if (keyUpKeys.includes(e.key) === true && usedKeyUpKeys.includes(e.key) === false) {
+            for (let i = 0; i < keys.length; i += 1) {
+                if (e.key.toLowerCase() === keys[i].innerText && keys[i].disabled !== true) {
+                    game.handleInteraction(keys[i]);
                 }
             }
         }
