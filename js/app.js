@@ -44,8 +44,8 @@ for (let i = 0; i < keys.length; i += 1) {
 /***
  * A keyup event listener assigned to the game. Listens for physical keyboard button presses.
  * Once the game starts, if the physical keyboard button has not already been pressed 
-   and the button code matches the text of an onscreen keyboard button, the `handleInteraction` method is called on the matched onscreen key.
- * The pressed physical keyboard button code is pushed to the `usedKeyUpKeys` array.
+   and the button key matches the text of an onscreen keyboard button, the `handleInteraction` method is called on the matched onscreen key.
+ * The pressed keyboard button 'key' property value is pushed to the `usedKeyUpKeys` array.
  */
 document.addEventListener('keyup', (e) => {
     if (game.activePhrase !== null) {
