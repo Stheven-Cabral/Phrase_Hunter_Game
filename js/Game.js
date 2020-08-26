@@ -62,10 +62,10 @@
      /***
       * `handleInteraction` method: 
       * - If the phrase includes the guessed letter, the class name `chosen` is added to the selected letter key, and `showMatchedLetter` method is called.
-      * - If the phrase does not include the guessed letter, the wrong CSS class is added to the selected letter key and the `removeLife` method is called.
+      * - If the phrase does not include the guessed letter, the class name `wrong` is added to the selected letter key and the `removeLife` method is called.
       * - Disables selected game keyboard letters.
       * The `checkForWin` method is called to see if all the letters have been revealed and is set to a variable.
-      * The `gameOver` is called display if a player has won or lost. 
+      * The `gameOver` method is called display if a player has won or lost. 
       */
      handleInteraction(letterKey) {
          const selectedLetter = letterKey.innerText;
@@ -113,7 +113,7 @@
 
      /***
       * `gameOver` method - displays the start overlay with either a "win" or "loss" message.
-      * The method also assigns either a win or lose class name to the overlay depending if the player has won or lost.
+      * The method also assigns either a win or lose class name to the overlay depending on if the player has won or lost.
       */
      gameOver(gameWon) {
          const overlay = document.getElementById('overlay');
