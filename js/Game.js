@@ -36,7 +36,7 @@
 
      /***
       * `startGame` method - hides the overlay, sets the `activePhrase` property to a random phrase.
-      * The method instantiates a new Phrase object using the `activePhrase` phrase property.
+      * The method instantiates a new Phrase object using the current `activePhrase` and sets it to be displayed using the `addPhraseToDisplay` method.
       * In addition, the method restarts game components after a win or loss.
       */
      startGame() {
