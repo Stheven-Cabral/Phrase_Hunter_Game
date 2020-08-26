@@ -27,7 +27,7 @@
      }
 
      /***
-      * `getRandomPhrase` method - randomly chooses a phrase from the `phrases` array.
+      * `getRandomPhrase` method - randomly chooses and returns a phrase from the `phrases` array.
       */
      getRandomPhrase() {
         const randomNum = Math.floor(Math.random() * this.phrases.length);
