@@ -61,7 +61,7 @@
 
      /***
       * `handleInteraction` method: 
-      * - If the phrase includes the guessed letter, the chosen CSS class is added to the selected letter key, and `showMatchedLetter` method is called.
+      * - If the phrase includes the guessed letter, the class name `chosen` is added to the selected letter key, and `showMatchedLetter` method is called.
       * - If the phrase does not include the guessed letter, the wrong CSS class is added to the selected letter key and the `removeLife` method is called.
       * - Disables selected game keyboard letters.
       * The `checkForWin` method is called to see if all the letters have been revealed and is set to a variable.
